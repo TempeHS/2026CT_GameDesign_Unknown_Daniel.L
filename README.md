@@ -210,13 +210,13 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 ### 5.1 Music
 | Track | Scene / Trigger | Source / Composer |
 |---|---|---|
-| | | |
+| None | | |
 | | | |
 
 ### 5.2 Sound Effects
 | Sound Effect | Trigger | Source |
 |---|---|---|
-| | | |
+| None | | |
 | | | |
 | | | |
 | | | |
@@ -244,7 +244,7 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 ### 6.2 Menus
 | Menu | Purpose | Screenshot |
 |---|---|---|
-| Main Menu | | |
+| Main Menu | | ![Menu Name](./docs/screenshots/menu.png) |
 | Pause Menu | | |
 | Game Over Screen | | |
 | | | |
@@ -258,9 +258,9 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 ### 7.1 Scene List
 | Scene Name | Purpose | Description |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+| Menu | | |
+| Level1 | | |
+| Level2 | | |
 | | | |
 
 ### 7.2 Level / Environment Screenshots
@@ -293,7 +293,7 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 | **HazardBlock.cs** | Hazard blocks | Detects player collision with hazards and triggers respawn. |
 | **PlayerMovement.cs** | Player | Handles player input, movement, jumping and physics. |
 | **RespawnManager.cs** | Player | Tracks current checkpoint and respawns player there after death or hazard collision. |
-| **Restart.cs** | Not functional | Intended to restart level; currently does not work. |
+| **Restart.cs** | Not functional | Intended to restart level but currently does not work. |
 | **StartMenuController.cs** | Start menu controller object | Controls start menu UI, button actions play/quit, and scene transitions. |
 | **TimerManager.cs** | Timer object | Tracks and displays time passed; used for level timing and stops when reaching end. |
 
