@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "2026CT_Unknown_Daniel.L.sln"
+    "dotnet.defaultSolution": "2026CT_GameDesign_DaisyDash_Daniel.L.sln"
 }

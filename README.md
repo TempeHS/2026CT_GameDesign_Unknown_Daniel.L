@@ -7,7 +7,7 @@
 | **Class / Course** | Computer Technology |
 | **Repository** | https://github.com/TempeHS/2026CT_GameDesign_DaisyDash_Daniel.L |
 | **Unity Version** | 6000.0.58f1 |
-| **Document Version** | 0.1 |
+| **Document Version** | 0.2 |
 | **Date** | 27/08/2026 |
 
 ---
@@ -34,16 +34,16 @@
 2D platformer
 
 ### 1.2 Target Audience
-Players who enjoy fast-paced, challenging platform games, including students and casual gamers who like mastering movement, hazards, and timed level runs.
+Players who enjoy fast-paced, platform games, including students and casual gamers who like mastering movement, hazards, and timed level runs.
 
 ### 1.3 Game Summary
-Daisy Dash is a 2D platformer in which the player navigates platforming levels using running, jumping, wall jumping, climbing, and dashing. A mouse-controlled flashlight reveals hidden blocks and routes, while checkpoints provide progress through the level. Players must avoid hazard blocks and reach the finish line as quickly as possible.
+Daisy Dash is a 2D platformer in which the player navigates platforming levels using running, jumping, wall jumping, climbing, and dashing. A mouse-controlled flashlight reveals hidden blocks and routes, while checkpoints prevent the player from being sent back to the start. Players must avoid hazard blocks and reach the finish line as quickly as possible.
 
 ### 1.4 Win / Loss Conditions
 | Condition | Description |
 |---|---|
-| Win | Reach the finish line. The level timer stops and the game loads the next level when one is available. |
-| Loss | Touch a hazard or otherwise fail a platforming section. The player respawns at the most recently activated checkpoint and can continue the run. |
+| Win | Reach the finish line. The level timer stops and the game loads the next level . |
+| Loss | Touch a hazard or otherwise fail a platforming section and falling into the void. The player respawns at the most recently activated checkpoint and can continue the run. |
 
 ### 1.5 Platform & Build Settings
 | Setting | Detail |
@@ -89,11 +89,11 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 ### 3.1 Core Mechanics
 | ID | Mechanic | Description | Implemented In (Script/Object) |
 |---|---|---|---|
-| M-1 | | | |
-| M-2 | | | |
-| M-3 | | | |
-| M-4 | | | |
-| M-5 | | | |
+| M-1 | Player movement | Allows the player to move throughout the level. | `PlayerMovement.cs` |
+| M-2 | Flashlight | The flashlight can reveal hidden blocks and paths | `FlashlightControls.cs` & `FlashlightReveal.cs` |
+| M-3 | Checkpoints system | Automatically puts a player back at their last checkpoint after dying. | `Checkpoint.cs`|
+| M-4 | Level timer | Starts a timer when starting a level and stops timer at end | `TimerManager.cs` |
+| M-5 | Finish line/Level completion | Reaching finish line completes level and loads next scene | `FinishLine.cs` |
 
 ### 3.2 Player Controls
 | Action | Input (Keyboard / Controller) | Description |
@@ -106,24 +106,24 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 ### 3.3 Physics & Collision
 | Feature | Description |
 |---|---|
-| | |
-| | |
-| | |
+| Rigidbody Physics | Uses `Rigidbody 2D` and `Box Collider 2D` for player's movement, gravity calculation and collision. |
+| Platform Collisions | Uses `Box Collider 2D` to prevent player from falling through floor. |
+| Hazard Collisions | Uses `Box Collider` with `Is Trigger` enabled to detect for hitbox overlap. |
 
 ### 3.4 Game Loop
 | Stage | Description |
 |---|---|
-| Start / Initialisation | |
-| Core Loop | |
-| Win / End State | |
-| Restart | |
+| Start / Initialisation | After clicking Play on the main menu, the first level is loaded. |
+| Core Loop | The player moves through the level and avoids hazards while the timer runs. |
+| Win / End State | Reaching end stops timer and loads the next scene. |
+| Restart | After touching a hazard, the player respawns at the latest checkpoint. The restart script does not currently work. |
 
 ### 3.5 Scoring & Progression
 | Element | Description |
 |---|---|
-| Scoring System | |
-| Difficulty Progression | |
-| Unlockables / Levels | |
+| Scoring System | You cannot gain any points/score, the timer is an indication of players performance. |
+| Difficulty Progression | Levels progressively becomes more difficult. |
+| Unlockables / Levels | Completing a level loads next level. |
 
 ---
 
@@ -158,9 +158,9 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 
 | Animation | Object / Character | Description | Screenshot |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+|  | | | |
+|  | | | |
+|  | | | |
 
 > Add screenshot images using: `![Animation Name](./docs/screenshots/animation_name.png)`
 
@@ -210,13 +210,13 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 ### 5.1 Music
 | Track | Scene / Trigger | Source / Composer |
 |---|---|---|
-| None | | |
+| | | |
 | | | |
 
 ### 5.2 Sound Effects
 | Sound Effect | Trigger | Source |
 |---|---|---|
-| None | | |
+| | | |
 | | | |
 | | | |
 | | | |
@@ -244,7 +244,7 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 ### 6.2 Menus
 | Menu | Purpose | Screenshot |
 |---|---|---|
-| Main Menu | | ![Menu Name](./docs/screenshots/menu.png) |
+| Main Menu | | |
 | Pause Menu | | |
 | Game Over Screen | | |
 | | | |
@@ -258,9 +258,9 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 ### 7.1 Scene List
 | Scene Name | Purpose | Description |
 |---|---|---|
-| Menu | | |
-| Level1 | | |
-| Level2 | | |
+| | | |
+| | | |
+| | | |
 | | | |
 
 ### 7.2 Level / Environment Screenshots
@@ -293,7 +293,7 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 | **HazardBlock.cs** | Hazard blocks | Detects player collision with hazards and triggers respawn. |
 | **PlayerMovement.cs** | Player | Handles player input, movement, jumping and physics. |
 | **RespawnManager.cs** | Player | Tracks current checkpoint and respawns player there after death or hazard collision. |
-| **Restart.cs** | Not functional | Intended to restart level but currently does not work. |
+| **Restart.cs** | Not functional | Intended to restart level; currently does not work. |
 | **StartMenuController.cs** | Start menu controller object | Controls start menu UI, button actions play/quit, and scene transitions. |
 | **TimerManager.cs** | Timer object | Tracks and displays time passed; used for level timing and stops when reaching end. |
 
