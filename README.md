@@ -319,14 +319,14 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 
 | # | Title | Author / Creator | URL / Source | What You Used It For | What You Changed / Adapted |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
-| 7 | | | | | |
-| 8 | | | | | |
+| 1 | Build Any 2D Top Down Game in Unity | Modular Template Tutorial (45+ Features) | Game Code Library | https://www.youtube.com/watch?v=HAVp6Z8b4xA | Original plan but was replaced, however animations from this video are still used. | Changed the actual game to a platformer after it got too complicated. |
+| 2 |  |  |  |  |  |
+| 3 |  |  |  |  |  |
+| 4 |  |  |  |  |  |
+| 5 |  |  |  |  |  |
+| 6 |  |  |  |  |  |
+| 7 |  |  |  |  |  |
+| 8 |  |  |  |  |  |
 
 ---
 
@@ -373,7 +373,7 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 
 | # | Challenge Encountered | How It Was Solved |
 |---|---|---|
-| 1 | | |
+| 1 | The built-in `IsGrounded` check was not resetting correctly | Replaced it with collision code for the 2D Rigidbody, grounding the player on floors and ungrounding them after jumping or leaving the floor. |
 | 2 | | |
 | 3 | | |
 | 4 | | |
@@ -561,11 +561,11 @@ Daisy Dash is a 2D platformer in which the player navigates platforming levels u
 | Branch Name | Feature | Date Started | Date Merged | Status |
 |---|---|---|---|---|
 | `main` | Stable release | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
+| `feature/Camera` |  |  |  |  |
+| `feature/Levels` |  |  |  |  |
+| `feature/animations` |  |  |  |  |
+| `feature/lighting` |  |  |  |  |
+| `feature/movement` |  |  |  |  |
 
 ---
 
